@@ -1,11 +1,14 @@
 import os
 import requests
 import time
+from dotenv import load_dotenv 
 
+load_dotenv(dotenv_path="../.env")
 # --- ТВОИ НАСТРОЙКИ ---
-ACCESS_KEY = 'read-57e587e67e4637d3db18dc96d94b1c9f'
-PERSONAL_KEY = 'IUQ/5EKO3dnrac8eTRfgZtAfDIBSvxoDFJ/WaH3C'
-
+ACCESS_KEY =  os.getenv("ACCESS_KEY")
+PERSONAL_KEY = os.getenv("PERSONAL_KEY")
+print(ACCESS_KEY, " +")
+print(PERSONAL_KEY)
 CLASSES = ['garter', 'stockinette', 'ribbing', 'seed']
 MAX_IMAGES_PER_CLASS = 200 # Максимальное количество изображений для каждого класса
 BASE_FOLDER = 'raw_dataset'
