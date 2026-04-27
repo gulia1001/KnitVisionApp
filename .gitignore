@@ -1,0 +1,18 @@
+# Virtual environments
+cv_env/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Datasets and outputs
+raw_dataset/
+cleaned_dataset/
+output/
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knit Vision Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Main Recognition Stage -->
+    <main class="main-stage">
+      <header>
+        <h1>Knit Vision</h1>
+        <p>A gentle AI companion for recognizing your stitching patterns.</p>
+      </header>
+      
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="image/*" hidden />
+        <div class="upload-content">
+          <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          <p>Drop your stitch photo here</p>
+          <span>or click to browse</span>
+        </div>
+        <img id="previewImage" class="preview-image hidden" />
+      </div>
+
+      <div class="result-area hidden" id="resultArea">
+        <h2>Pattern Recognized</h2>
+        <h3 id="patternName" class="pattern-name">...</h3>
+        <button id="viewTutorialBtn" class="btn primary-btn">Learn this Stitch</button>
+
+        <!-- ML Details Explanation Log -->
+        <div class="ml-log" id="mlLog">
+          <h4>AI System Log</h4>
+          <pre id="logContent"></pre>
+        </div>
+      </div>
+      
+      <!-- Loading indicator -->
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <p>Analyzing stitch...</p>
+      </div>
+
+    </main>
+
+    <!-- Side Panel -->
+    <aside class="side-panel" id="sidePanel">
+      <div class="panel-header">
+        <h2 id="tutorialTitle">Tutorial</h2>
+        <button id="closePanelBtn" class="close-btn">&times;</button>
+      </div>
+      
+      <div class="panel-content">
+        <div class="tutorial-image-container">
+          <img id="tutorialImage" src="" alt="Stitch pattern" />
+        </div>
+        <div id="tutorialText" class="tutorial-text">
+        </div>
+      </div>
+    </aside>
+
+  </div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
